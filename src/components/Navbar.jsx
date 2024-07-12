@@ -9,13 +9,14 @@ import { useRef, useEffect } from 'react';
 
 function Navbar() {
   const inputRef = useRef(null);
+ 
 
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
   return (
-    <nav className="p-4 border-b border-black">
+    <nav className="p-4 border-b border-gray-200">
       <div>
         {/* firstrow */}
         <section className="flex items-center justify-between p-2">
@@ -28,7 +29,7 @@ function Navbar() {
               ref={inputRef}
               type="text"
               placeholder="Search"
-              className="w-full p-2 font-normal bg-white border border-black rounded-none"
+              className="w-full p-2 font-normal bg-white border border-gray-400 rounded-none"
             />
           </div>
           <div className="flex item-center gap-14">
