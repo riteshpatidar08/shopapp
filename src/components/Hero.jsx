@@ -17,7 +17,7 @@ function Hero() {
     autoplaySpeed: 2500,
   };
   return (
-    <div>
+    <div className='mt-8'>
       <Slider {...settings}>
         <div>
           <img className="h-full w-full object-cover" src={men} />
