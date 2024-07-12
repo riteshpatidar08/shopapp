@@ -5,7 +5,15 @@ import { IoLogInOutline } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { GoHeart } from 'react-icons/go';
 import NavItems from './NavItems';
+import { useRef, useEffect } from 'react';
+
 function Navbar() {
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   return (
     <nav className="p-4 border-b border-black">
       <div>
@@ -17,6 +25,7 @@ function Navbar() {
           </div>
           <div className="w-96">
             <input
+              ref={inputRef}
               type="text"
               placeholder="Search"
               className="w-full p-2 font-normal bg-white border border-black rounded-none"
