@@ -6,21 +6,22 @@ import Banner from '../components/Banner';
 import GridSection from '../components/GridSection';
 import Features from '../components/Features';
 import FitGuide from '../components/FitGuide';
-import EmailSubscription from '../components/EmailSubscription';
+
+import ProductList from '../components/ProductList';
+
 function Home() {
   return (
     <div>
-      <TopStrip />
-      <Navbar />
+     
       <Hero />
-      <GridSection/>
+      <GridSection />
       <div className="px-28 py-7">
         <Banner />
       </div>
-      <FitGuide/>
-      <Features/>
-      <EmailSubscription/>
-
+<FitGuide/>
+      <Features />
+      <ProductList />
+     
     </div>
   );
 }
