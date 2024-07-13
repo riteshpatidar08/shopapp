@@ -25,11 +25,11 @@ function Features() {
       <div className="grid  p-6 grid-cols-3">
         {features.map((item, index) => (
           <div
-            className="border border-gray-200 p-5 text-center"
+            className="border border-gray-200 flex flex-col gap-2 p-5 text-center"
             key={item.title}
           >
             <FontAwesomeIcon
-              className="text-lime-500 text-2xl"
+              className="text-red-500 text-4xl"
               icon={item.icon}
             />
             <h1 className="text-lg font-medium">{item.title}</h1>
