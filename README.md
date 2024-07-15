@@ -9,3 +9,11 @@ Currently, two official plugins are available:
 
 
 //FaSignINalt , faheart  , iologout hioutlineshopping , goheart
+
+
+
+  //taxrate
+  //subtotal quantiy*price
+  //tax amout = subtotal * TaxRate
+  //totalwithTax = subtotal + taxamount
+    Tax ({(taxRate * 100).toFixed(0)}%)

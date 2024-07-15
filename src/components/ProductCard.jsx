@@ -1,4 +1,5 @@
 import React from 'react';
+import Rating from '@mui/material/Rating';
 
 function ProductCard({ product }) {
   console.log(product);
@@ -6,7 +7,7 @@ function ProductCard({ product }) {
     <div>
       <div className="relative  group">
         <div className="absolute top-2 left-2 bg-red-500 text-white font-semibold text-xs p-1">
-          -40%
+          {product.discount}
         </div>
         <img className="h-full w-full object-cover" src={product.image} />
         <div
@@ -22,6 +23,7 @@ function ProductCard({ product }) {
         </div>
       </div>
       <div className="mt-3">
+
         <h1>{product.name}</h1>
         <div className="flex gap-2">
           <span className=" text-red-500 line-through">
