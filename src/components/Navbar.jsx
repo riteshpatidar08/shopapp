@@ -6,10 +6,11 @@ import { Link } from 'react-router-dom';
 import { GoHeart } from 'react-icons/go';
 import NavItems from './NavItems';
 import { useRef, useEffect } from 'react';
-
+import { useSelector } from 'react-redux';
 function Navbar() {
   const inputRef = useRef(null);
-
+const {items, totalQuantity} = useSelector((state)=>state.cart)
+console.log(totalQuantity)
   useEffect(() => {
     inputRef.current.focus();
   }, []);
@@ -44,9 +45,12 @@ function Navbar() {
               <span className="text-xs font-normal hover:underline">Saved</span>
             </Link>
 
-            <Link to="">
+            <Link className='relative' to="/cart">
               <HiOutlineShoppingBag className="text-2xl" />
               <span className="text-xs font-normal hover:underline">Cart</span>
+              {totalQuantity > 0 ? (
+          <span className='w-5 absolute -top-3 left-2 h-5 bg-green-500 text-xs rounded-full text-white flex items-center justify-center'>{totalQuantity}</span>
+              ) : ''}
             </Link>
           </div>
         </section>
