@@ -23,7 +23,7 @@ function ProductCard({ product }) {
         </div>
       </div>
       <div className="mt-3">
-
+  <Rating name="product_rating" value={product.rating} readOnly size='small' sx={{color :'black'}}  />
         <h1>{product.name}</h1>
         <div className="flex gap-2">
           <span className=" text-red-500 line-through">
