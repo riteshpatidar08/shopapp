@@ -19,11 +19,21 @@ const [suggestionsItems , setSuggestionsItems] = useState([])
     inputRef.current.focus();
   }, []);
 
-  // useEffect(()=>{
-  //   if(suggestionRef.current && !suggestionRef.conta)
-  // })
+ useEffect(()=>{
+  const clickOutSide = (event) => {
+   
+    if(suggestionRef.current && !suggestionRef.current.contains(event.target) && !inputRef.current.contains(event.target)){
+   
+      setSuggestionsItems([])
+    }
+  }
 
-console.log(suggestionsItems)
+  window.addEventListener('mousedown', clickOutSide)
+
+  return ()=> window.removeEventListener('mousedown', clickOutSide)
+ },[])
+
+
 
 const handleChange = (event) => {
    const value = event.target.value
@@ -51,7 +61,7 @@ setSearchTerm(value)
               type="text"
               placeholder="Search"
               onChange={handleChange}
-              className="w-full p-2 font-normal bg-white focu border border-gray-400 rounded-none"
+              className="w-full focus:outline-none p-2 font-normal bg-white focu border border-gray-400 rounded-none"
             />
             {
               suggestionsItems.length > 0 ? (
