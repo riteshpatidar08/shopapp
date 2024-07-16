@@ -1,7 +1,12 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import ProductCard from '../components/ProductCard';
 import all_products from '../assets/all_product';
+
 function Women() {
+
+  useEffect(()=>{
+window.scrollTo(0,0)
+  })
   const womenItems = all_products.filter((product) => {
     return product.category === 'women';
   });

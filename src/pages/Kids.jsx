@@ -1,7 +1,10 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import ProductCard from '../components/ProductCard';
 import all_products from '../assets/all_product';
 function Kids() {
+    useEffect(()=>{
+window.scrollTo(0,0)
+  })
   const kidsItems = all_products.filter((product) => {
     return product.category === 'kid';
   });
