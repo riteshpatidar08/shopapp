@@ -9,8 +9,8 @@ import { useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 function Navbar() {
   const inputRef = useRef(null);
-const {items, totalQuantity} = useSelector((state)=>state.cart)
-console.log(totalQuantity)
+  const { items, totalQuantity } = useSelector((state) => state.cart);
+  console.log(totalQuantity);
   useEffect(() => {
     inputRef.current.focus();
   }, []);
@@ -45,12 +45,16 @@ console.log(totalQuantity)
               <span className="text-xs font-normal hover:underline">Saved</span>
             </Link>
 
-            <Link className='relative' to="/cart">
+            <Link className="relative" to="/cart">
               <HiOutlineShoppingBag className="text-2xl" />
               <span className="text-xs font-normal hover:underline">Cart</span>
               {totalQuantity > 0 ? (
-          <span className='w-5 absolute -top-3 left-2 h-5 bg-green-500 text-xs rounded-full text-white flex items-center justify-center'>{totalQuantity}</span>
-              ) : ''}
+                <span className="w-5 absolute -top-3 left-2 h-5 bg-green-500 text-xs rounded-full text-white flex items-center justify-center">
+                  {totalQuantity}
+                </span>
+              ) : (
+                ''
+              )}
             </Link>
           </div>
         </section>
@@ -62,7 +66,7 @@ console.log(totalQuantity)
               <NavItems to="/" text="HOME" />
               <NavItems to="/men" text="MEN" />
               <NavItems to="/women" text="WOMEN" />
-              <NavItems to="/" text="KIDS" />
+              <NavItems to="/kids" text="KIDS" />
             </ul>
           </div>
         </section>

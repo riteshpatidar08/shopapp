@@ -30,6 +30,18 @@ const cartSlice = createSlice({
          state.totalPrice += newItem.price
     },
 
+    removeItemsFromCart(state,action){
+      const idToDelete  = action.payload
+      const existingItem = state.items.find((item)=>{
+        return item.id === idToDelete
+      })
+      if(existingItem){
+        
+      }
+
+
+    }
+
 }})
 
 

@@ -7,6 +7,8 @@ import TopStrip from './components/TopStrip';
 import EmailSubscription from './components/EmailSubscription';
 import Footer from './components/Footer';
 import Cart from './pages/Cart';
+import Kids from './pages/Kids';
+import Women from './pages/Women';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/men" element={<Men />}></Route>
+        <Route path='/kids' element={<Kids/>}/>
+        <Route path='/women' element={<Women/>}/>
         <Route path="/cart" element={<Cart/>}/>
       </Routes>
       <EmailSubscription />
