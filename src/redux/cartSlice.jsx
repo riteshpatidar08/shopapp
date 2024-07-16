@@ -36,7 +36,15 @@ const cartSlice = createSlice({
         return item.id === idToDelete
       })
       if(existingItem){
-        
+        if(existingItem.quantity === 1) {
+          state.items = state.items.filter((items)=>{
+            return items.id !== idToDelete
+          })
+        }else {
+          existingItem.quantity-- ;
+        }
+        state.totalQuantity-- ;
+        state.totalPrice -= existingItem.price;
       }
 
 
@@ -46,6 +54,6 @@ const cartSlice = createSlice({
 
 
 
-export const {addToCart} = cartSlice.actions ;
+export const {addToCart , removeItemsFromCart} = cartSlice.actions ;
 
 export default cartSlice.reducer ;

@@ -4,12 +4,13 @@ import { addToCart } from '../redux/cartSlice';
 import { useDispatch } from 'react-redux';
 function ProductCard({ product }) {
   const dispatch = useDispatch();
+console.log(product.new_price)
 
   const handleClick = () =>{
 dispatch(addToCart({
    id : product.id,
    name : product.name,
-   price : product.price ,
+   price : product.new_price ,
    image : product.image
 }))
   }
