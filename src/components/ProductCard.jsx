@@ -1,13 +1,13 @@
 import React from 'react';
 import Rating from '@mui/material/Rating';
-import { addToCart } from '../redux/cartSlice';
+import { addItemsToCart } from '../redux/cartSlice';
 import { useDispatch } from 'react-redux';
 function ProductCard({ product }) {
   const dispatch = useDispatch();
 console.log(product.new_price)
 
   const handleClick = () =>{
-dispatch(addToCart({
+dispatch(addItemsToCart({
    id : product.id,
    name : product.name,
    price : product.new_price ,

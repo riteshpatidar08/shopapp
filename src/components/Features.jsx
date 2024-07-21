@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruck, faUndoAlt, faLock } from '@fortawesome/free-solid-svg-icons';
+
 function Features() {
   const features = [
     {
@@ -22,7 +23,7 @@ function Features() {
 
   return (
     <div className="container mx-auto py-6">
-      <div className="grid  p-6 grid-cols-3">
+      <div className="grid gap-6 p-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {features.map((item, index) => (
           <div
             className="border border-gray-200 flex flex-col gap-2 p-5 text-center"

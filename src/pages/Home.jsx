@@ -15,7 +15,7 @@ function Home() {
      
       <Hero />
       <GridSection />
-      <div className="px-28 py-7">
+      <div className="px-10 py-2 md:px-28 md:py-7">
         <Banner />
       </div>
 <FitGuide/>
